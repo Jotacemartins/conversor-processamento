@@ -96,6 +96,7 @@ document.getElementById('convertButton').addEventListener('click', () => {
 // Adiciona um evento ao input de arquivo para esconder o link de download quando um novo arquivo for selecionado
 document.getElementById('fileInput').addEventListener('change', () => {
     document.getElementById('downloadLink').style.display = 'none'; // Esconde o link de download
+    document.getElementById('loadingMessage').style.display = 'none'; // Esconde a mensagem de carregamento
 });
 
 // Funções para formatar números
