@@ -1,26 +1,3 @@
-// Função de login simples para demonstração
-function login() {
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-    if (username === 'processamento' && password === '0433@') {
-        alert('Login bem-sucedido!');
-        // Exibir o conversor após login bem-sucedido
-        document.querySelector('.container').style.display = 'block';
-        document.getElementById('loginContainer').style.display = 'none';
-    } else {
-        alert('Usuário ou senha incorretos.');
-    }
-}
-
-// Alternância de tema (claro/escuro)
-document.getElementById('themeToggle').addEventListener('click', function () {
-    document.body.classList.toggle('dark-mode');
-    
-    // Alterna o ícone entre lua e sol
-    const isDarkMode = document.body.classList.contains('dark-mode');
-    this.textContent = isDarkMode ? '☀️' : '🌙';
-});
-
 // Função para converter arquivos
 document.getElementById('convertButton').addEventListener('click', () => {
     const fileInput = document.getElementById('fileInput').files[0];
@@ -93,19 +70,7 @@ document.getElementById('convertButton').addEventListener('click', () => {
     reader.readAsArrayBuffer(fileInput);
 });
 
-// Funções para formatar números
-function formatCardNumber1(num) {
-    return `${num.slice(0, 2)}.${num.slice(2, 4)}.${num.slice(4, 12)}-${num.slice(12)}`;
-}
-
-function formatCardNumber2(num) {
-    return `${num.slice(0, 1)}.${num.slice(1, 4)}.${num.slice(4, 7)}`;
-}
-
-function formatCPF(num) {
-    return `${num.slice(0, 3)}.${num.slice(3, 6)}.${num.slice(6, 9)}-${num.slice(9)}`;
-}
-
-function formatCNPJ(num) {
-    return `${num.slice(0, 2)}.${num.slice(2, 5)}.${num.slice(5, 8)}/${num.slice(8, 12)}-${num.slice(12)}`;
-}
+// Adiciona um evento ao input de arquivo para esconder o link de download quando um novo arquivo for selecionado
+document.getElementById('fileInput').addEventListener('change', () => {
+    document.getElementById('downloadLink').style.display = 'none'; // Esconde o link de download
+});
