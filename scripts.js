@@ -84,7 +84,7 @@ document.getElementById('convertButton').addEventListener('click', () => {
         const link = document.getElementById('downloadLink');
         link.href = URL.createObjectURL(blob);
         link.download = newFileName;
-        link.textContent = 'Clique aqui para baixar o arquivo';
+        link.textContent = 'Baixar arquivo';
         link.style.display = 'block';
 
         document.getElementById('loadingMessage').style.display = 'none';
