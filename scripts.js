@@ -79,7 +79,7 @@ document.getElementById('convertButton').addEventListener('click', () => {
         const link = document.getElementById('downloadLink');
         link.href = URL.createObjectURL(blob);
         link.download = newFileName;
-        link.textContent = 'Clique aqui para baixar o arquivo';
+        link.textContent = 'Baixar Arquivo';
         link.style.display = 'block';
 
         document.getElementById('loadingMessage').style.display = 'none';
@@ -100,7 +100,7 @@ function formatCardNumber1(num) {
 }
 
 function formatCardNumber2(num) {
-    return `${num.slice(0, 1)}.${num.slice(1, 4)}.${num.slice(4, 7)}`;
+    return `${num.slice(0, 1)}.${num.slice(1, 4)}.${num.slice(4, 7)}.${num.slice(7)}`;
 }
 
 function formatCPF(num) {
