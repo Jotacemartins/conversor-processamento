@@ -45,28 +45,23 @@ document.getElementById('convertButton').addEventListener('click', () => {
 
         const updatedRows = rows.map((row, index) => {
             if (index === 0) {
+                // Definindo o cabeçalho com base no tipo de formatação escolhido
                 return formatType === 'cpf' ? ['CPF'] : formatType === 'cnpj' ? ['CNPJ'] : ['Cartão'];
             }
 
-            let cardNumber = String(row[0]);
-
-            if (cardNumber.includes('E')) {
-                cardNumber = Number(cardNumber).toFixed(0);
-            }
-
-            cardNumber = cardNumber.replace(/[^0-9]/g, '');
+            let cardNumber = String(row[0]).replace(/[^0-9]/g, ''); // Remove caracteres não numéricos
 
             if (formatType === "cartao1") {
-                cardNumber = cardNumber.padStart(13, '0');
+                cardNumber = cardNumber.padStart(13, '0'); // Preenche com zeros à esquerda até 13 dígitos
                 return [formatCardNumber1(cardNumber)];
             } else if (formatType === "cpf") {
-                cardNumber = cardNumber.padStart(11, '0');
+                cardNumber = cardNumber.padStart(11, '0'); // Preenche com zeros à esquerda até 11 dígitos
                 return [formatCPF(cardNumber)];
             } else if (formatType === "cartao2") {
-                cardNumber = cardNumber.padStart(10, '0');
+                cardNumber = cardNumber.padStart(10, '0'); // Preenche com zeros à esquerda até 10 dígitos
                 return [formatCardNumber2(cardNumber)];
             } else if (formatType === "cnpj") {
-                cardNumber = cardNumber.padStart(14, '0');
+                cardNumber = cardNumber.padStart(14, '0'); // Preenche com zeros à esquerda até 14 dígitos
                 return [formatCNPJ(cardNumber)];
             }
 
@@ -84,7 +79,7 @@ document.getElementById('convertButton').addEventListener('click', () => {
         const link = document.getElementById('downloadLink');
         link.href = URL.createObjectURL(blob);
         link.download = newFileName;
-        link.textContent = 'Baixar arquivo';
+        link.textContent = 'Clique aqui para baixar o arquivo';
         link.style.display = 'block';
 
         document.getElementById('loadingMessage').style.display = 'none';
