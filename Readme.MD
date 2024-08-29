@@ -27,8 +27,8 @@ Clone este repositório e instale as dependências necessárias:
 
 bash
 Copiar código
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
-cd nome-do-repositorio
+git clone
+cd
 npm install
 Como Usar
 Após a instalação, você pode importar o módulo em seu projeto e utilizá-lo para formatar números ou acessar a interface de front-end para uso direto:
