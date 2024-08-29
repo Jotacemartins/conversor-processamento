@@ -1,40 +1,53 @@
-## Projeto criado por mim
-## Sobre o Projeto
-
-Conversor de Números de Cartões
-Este projeto é uma aplicação web simples que permite converter números de cartões no formato 0000000000000 para o formato 00.00.00000000-0. A ferramenta é útil para quem recebe arquivos em formato .xlsx contendo números de cartão e precisa formatá-los de maneira adequada.
+Number Formatter
+Descrição
+Este projeto é um conversor que transforma números em formatos específicos de CPF, CNPJ e cartões de crédito. Além disso, inclui uma interface de front-end bonita e intuitiva para que os usuários possam acessar e utilizar a ferramenta diretamente no navegador.
 
 Funcionalidades
-Carregamento de arquivos Excel (.xlsx).
-Conversão automática de números de cartões de crédito do formato científico para o formato desejado.
-Download do arquivo convertido.
-Tecnologias Utilizadas
-HTML: Estrutura da página.
-CSS: Estilização básica.
-JavaScript: Lógica de manipulação de dados e conversão de números.
-XLSX.js: Biblioteca para manipulação de arquivos Excel.
-Como Usar
-Clone o Repositório:
+Conversão para CPF: Converte uma sequência de números em um formato de CPF (XXX.XXX.XXX-XX).
+Conversão para CNPJ: Converte uma sequência de números em um formato de CNPJ (XX.XXX.XXX/XXXX-XX).
+Conversão para Cartão de Crédito: Converte uma sequência de números em um formato de cartão de crédito (XXXX XXXX XXXX XXXX).
+Exemplo de Uso
+javascript
+Copiar código
+const formatNumber = require('path/to/your/module');
+
+// Exemplo para CPF
+const cpf = formatNumber.toCPF('12345678901');
+console.log(cpf); // Saída: 123.456.789-01
+
+// Exemplo para CNPJ
+const cnpj = formatNumber.toCNPJ('12345678000195');
+console.log(cnpj); // Saída: 12.345.678/0001-95
+
+// Exemplo para Cartão de Crédito
+const creditCard = formatNumber.toCreditCard('1234567812345678');
+console.log(creditCard); // Saída: 1234 5678 1234 5678
+Instalação
+Clone este repositório e instale as dependências necessárias:
 
 bash
 Copiar código
 git clone https://github.com/seu-usuario/nome-do-repositorio.git
 cd nome-do-repositorio
-Abra o Arquivo index.html:
+npm install
+Como Usar
+Após a instalação, você pode importar o módulo em seu projeto e utilizá-lo para formatar números ou acessar a interface de front-end para uso direto:
 
-Você pode abrir o arquivo index.html diretamente no seu navegador.
-Carregue o Arquivo:
+bash
+Copiar código
+npm start
+Depois, acesse http://localhost:3000 no seu navegador para usar a interface gráfica.
 
-Clique em "Escolher arquivo" e selecione o arquivo .xlsx que contém os números dos cartões.
-Converta os Números:
-
-Clique no botão "Converter". O aplicativo processará os dados e formatará os números dos cartões.
-Baixe o Arquivo Convertido:
-
-Após a conversão, um link aparecerá para você baixar o arquivo convertido. Clique no link para baixar o arquivo.
-Contribuições
-Contribuições são bem-vindas! Se você encontrar algum problema ou tiver sugestões de melhorias, sinta-se à vontade para abrir uma issue ou um pull request.
+Tecnologias Utilizadas
+JavaScript: Linguagem principal utilizada para a lógica de formatação.
+Node.js: Ambiente de execução para JavaScript.
+React: Usado para construir o front-end.
+CSS: Para estilização da interface de usuário.
+Contribuição
+Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
 Licença
-Este projeto é de domínio público. Sinta-se livre para usar, modificar e distribuir o código.
+Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para mais detalhes.
 
+Autor
+Jhonatha Cunha Martins
