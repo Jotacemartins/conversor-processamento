@@ -13,7 +13,7 @@ const formatNumber = require('path/to/your/module');
 
 // Exemplo para CPF
 const cpf = formatNumber.toCPF('12345678901');
-console.log(cpf); // Saída: 123.456.789-01
+console.log (cpf); // Saída: 123.456.789-01
 
 // Exemplo para CNPJ
 const cnpj = formatNumber.toCNPJ('12345678000195');
